@@ -14,6 +14,7 @@ import Container from "react-bootstrap/Container";
 import Home from "../home/Home";
 import About from "../about/About";
 import Contact from "../contact/Contact";
+import Login from "../login/Login";
 
 function Layout() {
     return (
@@ -32,6 +33,9 @@ function Layout() {
                   <NavLink to="/contact/" className="nav-link">
                       Contact
                   </NavLink>
+                  <NavLink to="/login/" className="nav-link">
+                      Login
+                  </NavLink>
   </Nav>
   <Form inline>
     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -44,6 +48,7 @@ function Layout() {
                 <Route path="/" exact component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/contact" component={Contact} />
+                <Route path="/login" component={Login} />
             </Switch>
         </Container>
     </Router>
