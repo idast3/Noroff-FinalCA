@@ -1,17 +1,12 @@
 import React from 'react';
-import CardList from "../cards/list/CardList";
+import LoginForm from "../login/LoginForm";
 
 
-export default function Home() {
+export default function Login() {
     return (
-       <div className="Homepage">
-
-       <br/><br/><br/>
-       <h1>Card Game</h1>
-       <br/>
-      <CardList />
+      <div className="Login">
+      <LoginForm />
 
       </div>
-
     );
 }

@@ -1,25 +1,22 @@
 import React from 'react';
 import useForm from 'react-hook-form';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink,
-} from "react-router-dom";
-import Home from "../home/Home";
-import { Redirect } from 'react-router-dom'
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
+import { useHistory } from "react-router-dom";
+
 
 export default function LoginForm() {
 
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => localStorage.setItem(document.getElementById("Username").value, document.getElementById("Password").value);
+  const history = useHistory();
+  const onSubmit = data => { localStorage.setItem("username", data.Username)
+  history.push('/cards')
+  }
+
   console.log(errors);
 
   return (
-    <Router>
 
     <Container>
 
@@ -34,9 +31,5 @@ export default function LoginForm() {
     </Form>
     </Container>
 
-    <Switch>
-        <Route path="/home" component={Home} />
-    </Switch>
-    </Router>
   );
 }

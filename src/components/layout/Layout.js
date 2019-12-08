@@ -14,7 +14,8 @@ import Container from "react-bootstrap/Container";
 import Home from "../home/Home";
 import About from "../about/About";
 import Contact from "../contact/Contact";
-import Login from "../login/Login";
+import Cards from "../cards/Cards";
+import CardDetailContainer from "../cards/detail/CardDetailContainer";
 
 function Layout() {
     return (
@@ -33,9 +34,10 @@ function Layout() {
                   <NavLink to="/contact/" className="nav-link">
                       Contact
                   </NavLink>
-                  <NavLink to="/login/" className="nav-link">
-                      Login
+                  <NavLink to="/cards/" className="nav-link">
+                      Cards
                   </NavLink>
+
   </Nav>
   <Form inline>
     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -48,7 +50,9 @@ function Layout() {
                 <Route path="/" exact component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/contact" component={Contact} />
-                <Route path="/login" component={Login} />
+                <Route path="/cards" component={Cards} />
+                <Route path="/card/:id" component={CardDetailContainer} />
+
             </Switch>
         </Container>
     </Router>

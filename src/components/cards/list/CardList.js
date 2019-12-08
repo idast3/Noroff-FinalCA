@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CardItem from "./CardItem";
 
+
 export default function CardList() {
     const [cards, setCards] = useState([]);
     useEffect(() => {

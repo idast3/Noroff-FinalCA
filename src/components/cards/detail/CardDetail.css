@@ -1,0 +1,22 @@
+.detail-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.character-breadcrumb .breadcrumb {
+    background-color: transparent;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+}
+
+.character-breadcrumb a {
+    color: #333333;
+    font-weight: bold;
+}
+
+.character-breadcrumb a::before {
+    content: "<<";
+    margin-right: 7px;
+}
