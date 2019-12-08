@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,6 +9,8 @@ import DetailList from "./DetailList";
 export default function CardDetail({ details }) {
     const { name, imageUrl, text, rarity, colors } = details;
 
+    console.log("colors", colors);
+
     return (
         <Row>
             <Col md={6} className="detail-image">
@@ -16,16 +18,12 @@ export default function CardDetail({ details }) {
             </Col>
             <Col>
                 <h1>{name}</h1>
-                <DetailList
-                    about={text}
-                    rarity={rarity}
-                    color={colors}
-                />
+                <DetailList text={text} rarity={rarity} colors={colors} />
             </Col>
         </Row>
     );
 }
 
 CardDetail.propTypes = {
-    details: PropTypes.object.isRequired,
+    details: PropTypes.object.isRequired
 };

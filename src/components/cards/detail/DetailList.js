@@ -1,13 +1,8 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
 import ListGroup from "react-bootstrap/ListGroup";
 
-export default function DetailList({
-    text,
-    rarity,
-    colors,
-}) {
-
+export default function DetailList({ text, rarity, colors }) {
     return (
         <ListGroup>
             <ListGroup.Item>
@@ -17,7 +12,7 @@ export default function DetailList({
                 <b>Rarity</b>: {rarity}
             </ListGroup.Item>
             <ListGroup.Item>
-                <b>Color</b>: {colors}
+                <b>Color</b>: {colors.toString()}
             </ListGroup.Item>
         </ListGroup>
     );
@@ -26,5 +21,5 @@ export default function DetailList({
 DetailList.propTypes = {
     text: PropTypes.string.isRequired,
     rarity: PropTypes.string.isRequired,
-    colors: PropTypes.string.isRequired,
+    colors: PropTypes.array.isRequired
 };

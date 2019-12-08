@@ -5,16 +5,14 @@ import { BASE_URL } from "../../../constants/API";
 import "./CardDetail.css";
 import CardDetail from "./CardDetail";
 
-
 export default class CardDetailContainer extends Component {
-
-  static propTypes = {
-        match: PropTypes.object.isRequired,
+    static propTypes = {
+        match: PropTypes.object.isRequired
     };
 
     state = {
         details: null,
-        loading: true,
+        loading: true
     };
 
     async componentDidMount() {
@@ -25,13 +23,15 @@ export default class CardDetailContainer extends Component {
             const response = await fetch(url);
             const json = await response.json();
 
+            console.log("json", json);
+
             this.setState({
-                details: json,
-                loading: false,
+                details: json.card,
+                loading: false
             });
         } catch (error) {
             this.setState({
-                loading: false,
+                loading: false
             });
         }
     }
